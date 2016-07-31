@@ -16,19 +16,29 @@ var AppComponent = (function () {
                 "id": 1,
                 "name": 'My first object',
                 "description": "This is the first object that I will send in.",
-                "quantity": 1
+                "quantity": 1,
+                "price": 5.75
             },
             {
                 "id": 2,
                 "name": 'My second object',
                 "description": "Here's a second object.",
-                "quantity": 20
+                "quantity": 20,
+                "price": 1000.00
             }];
     }
+    AppComponent.prototype.totalObjectQuantity = function () {
+        var sum = 0;
+        for (var _i = 0, _a = this.myObjects; _i < _a.length; _i++) {
+            var myObject = _a[_i];
+            sum += myObject.quantity;
+        }
+        return sum;
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<h1>{{title}}</h1>\n  <ul>\n    <li *ngFor=\"let myObject of myObjects\">\n      <h2>{{myObject.name}}</h2>\n      <p>{{myObject.description}}</p>\n      <p *ngIf=\"myObject.quantity >= 10\">There are a bunch of these. ({{myObject.quantity}})</p>\n      <p *ngIf=\"myObject.quantity < 10\">There aren't a bunch of these. ({{myObject.quantity}})</p>\n    </li>\n  </ul>"
+            template: "<h1>{{title}}</h1>\n  <ul>\n    <li *ngFor=\"let myObject of myObjects\">\n      <h2>{{myObject.name}}</h2>\n      <p>{{myObject.description}}</p>\n      <p *ngIf=\"myObject.quantity >= 10\">There are a bunch of these. ({{myObject.quantity}})</p>\n      <p *ngIf=\"myObject.quantity < 10\">There aren't a bunch of these. ({{myObject.quantity}})</p>\n      <p> The cost is {{myObject.price | currency:'USD':true}}</p>\n    </li>\n    <h3>The total quantity of all of the objects is {{totalObjectQuantity()}}.</h3>\n  </ul>"
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
