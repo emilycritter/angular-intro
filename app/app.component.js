@@ -12,17 +12,23 @@ var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'Angular 2 Intro';
-        this.firstObject = {
-            "id": 1,
-            "name": 'My first Object',
-            "description": "This is my first object that I will send in.",
-            "quantity": 1
-        };
+        this.myObjects = [{
+                "id": 1,
+                "name": 'My first object',
+                "description": "This is the first object that I will send in.",
+                "quantity": 1
+            },
+            {
+                "id": 2,
+                "name": 'My second object',
+                "description": "Here's a second object.",
+                "quantity": 20
+            }];
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<h1>{{title}}</h1>\n    <h2>{{firstObject.name}}</h2>\n    <p>{{firstObject.description}}</p>"
+            template: "<h1>{{title}}</h1>\n  <ul>\n    <li *ngFor=\"let myObject of myObjects\">\n      <h2>{{myObject.name}}</h2>\n      <p>{{myObject.description}}</p>\n      <p *ngIf=\"myObject.quantity >= 10\">There are a bunch of these. ({{myObject.quantity}})</p>\n      <p *ngIf=\"myObject.quantity < 10\">There aren't a bunch of these. ({{myObject.quantity}})</p>\n    </li>\n  </ul>"
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
