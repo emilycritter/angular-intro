@@ -31,10 +31,6 @@ export class AppComponent {
   }];
 
   totalObjectQuantity(){
-    let sum = 0;
-    for (let myObject of this.myObjects) {
-      sum += myObject.quantity;
-    }
-    return sum;
+    return this.myObjects.reduce(function(prev, current) {return prev + current.quantity; }, 0);
   }
 }

@@ -28,12 +28,7 @@ var AppComponent = (function () {
             }];
     }
     AppComponent.prototype.totalObjectQuantity = function () {
-        var sum = 0;
-        for (var _i = 0, _a = this.myObjects; _i < _a.length; _i++) {
-            var myObject = _a[_i];
-            sum += myObject.quantity;
-        }
-        return sum;
+        return this.myObjects.reduce(function (prev, current) { return prev + current.quantity; }, 0);
     };
     AppComponent = __decorate([
         core_1.Component({
