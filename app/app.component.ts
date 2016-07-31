@@ -31,6 +31,6 @@ export class AppComponent {
   }];
 
   totalObjectQuantity(){
-    return this.myObjects.reduce(function(prev, current) {return prev + current.quantity; }, 0);
+    return this.myObjects.reduce((prev, current) => prev + current.quantity, 0);
   }
 }
