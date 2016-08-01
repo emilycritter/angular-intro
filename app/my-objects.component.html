@@ -5,7 +5,7 @@
       <div class="select-quantity">
         <p>Quantity: &nbsp;
           <button class="decrease" (click)="downQuantity(myObject)" name="button">-</button>
-          {{myObject.quantity}}
+          <input class="number" type="text" [value]="myObject.quantity" (input)="myObject.quantity = $event.target.value">
           <button class="increase" (click)="upQuantity(myObject)" name="button">+</button>
         </p>
       </div>
