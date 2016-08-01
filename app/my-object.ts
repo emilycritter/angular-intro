@@ -4,4 +4,5 @@ export class MyObject {
   description: string;
   quantity: number;
   price: number;
+  image: string;
 }

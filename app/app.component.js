@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var app_my_object_1 = require('./app.my-object');
+var my_objects_component_1 = require('./my-objects.component');
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'Angular 2 Intro';
@@ -17,8 +17,8 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<h1>{{title}}</h1>\n  <my-object></my-object>",
-            directives: [app_my_object_1.MyObjectComponent]
+            template: "<h1>{{title}}</h1>\n  <my-objects></my-objects>",
+            directives: [my_objects_component_1.MyObjectsComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

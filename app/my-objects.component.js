@@ -9,25 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var mocks_1 = require('./mocks');
-var MyObjectComponent = (function () {
-    function MyObjectComponent() {
+var mocks_1 = require('./mocks'); // Import mocks
+var MyObjectsComponent = (function () {
+    function MyObjectsComponent() {
     }
-    MyObjectComponent.prototype.ngOnInit = function () {
-        this.myObjects = mocks_1.MYOBJECT;
+    MyObjectsComponent.prototype.ngOnInit = function () {
+        this.myObjects = mocks_1.MYOBJECTS;
     };
-    MyObjectComponent.prototype.totalObjectQuantity = function () {
+    MyObjectsComponent.prototype.totalObjectQuantity = function () {
         return this.myObjects.reduce(function (prev, current) { return prev + current.quantity; }, 0);
     };
-    MyObjectComponent = __decorate([
+    MyObjectsComponent = __decorate([
+        // Import mocks
         core_1.Component({
-            selector: 'my-object',
-            templateUrl: 'app/my-object.component.html',
-            styleUrls: ['app/my-object.component.css']
+            selector: 'my-objects',
+            templateUrl: 'app/my-objects.component.html',
+            styleUrls: ['app/my-objects.component.css']
         }), 
         __metadata('design:paramtypes', [])
-    ], MyObjectComponent);
-    return MyObjectComponent;
+    ], MyObjectsComponent);
+    return MyObjectsComponent;
 }());
-exports.MyObjectComponent = MyObjectComponent;
-//# sourceMappingURL=my-object.component.js.map
+exports.MyObjectsComponent = MyObjectsComponent;
+;
+//# sourceMappingURL=my-objects.component.js.map
