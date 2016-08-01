@@ -17,4 +17,16 @@ export class MyObjectsComponent {
   totalObjectQuantity(){
     return this.myObjects.reduce((prev, current) => prev + current.quantity, 0);
   }
+
+  upQuantity(myObject) {
+    if (myObject.quantity < 100) {
+      myObject.quantity++;
+    }
+  }
+
+  downQuantity(myObject) {
+    if (myObject.quantity > 0) {
+      myObject.quantity--;
+    }
+  }
 };

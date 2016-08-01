@@ -19,6 +19,16 @@ var MyObjectsComponent = (function () {
     MyObjectsComponent.prototype.totalObjectQuantity = function () {
         return this.myObjects.reduce(function (prev, current) { return prev + current.quantity; }, 0);
     };
+    MyObjectsComponent.prototype.upQuantity = function (myObject) {
+        if (myObject.quantity < 100) {
+            myObject.quantity++;
+        }
+    };
+    MyObjectsComponent.prototype.downQuantity = function (myObject) {
+        if (myObject.quantity > 0) {
+            myObject.quantity--;
+        }
+    };
     MyObjectsComponent = __decorate([
         // Import mocks
         core_1.Component({

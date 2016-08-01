@@ -2,8 +2,13 @@
     <li *ngFor="let myObject of myObjects" [class.featured]="myObject.featured">
       <h2 class="name">{{myObject.name}}</h2>
       <p>{{myObject.description}}</p>
-      <p class="quantity" *ngIf="myObject.quantity >= 10">There are a bunch of these. ({{myObject.quantity}})</p>
-      <p class="quantity" *ngIf="myObject.quantity < 10">There aren't a bunch of these. ({{myObject.quantity}})</p>
+      <div class="select-quantity">
+        <p>Quantity: &nbsp;
+          <button class="decrease" (click)="downQuantity(myObject)" name="button">-</button>
+          {{myObject.quantity}}
+          <button class="increase" (click)="upQuantity(myObject)" name="button">+</button>
+        </p>
+      </div>
       <p> The cost is {{myObject.price | currency:'USD':true}}</p>
       <div class="photo">
         <img [src]="myObject.image" alt="Image" />
