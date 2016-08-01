@@ -32,7 +32,9 @@ var MyObjectComponent = (function () {
     MyObjectComponent = __decorate([
         core_1.Component({
             selector: 'my-object',
-            template: "\n  <ul>\n    <li *ngFor=\"let myObject of myObjects\">\n      <h2>{{myObject.name}}</h2>\n      <p>{{myObject.description}}</p>\n      <p *ngIf=\"myObject.quantity >= 10\">There are a bunch of these. ({{myObject.quantity}})</p>\n      <p *ngIf=\"myObject.quantity < 10\">There aren't a bunch of these. ({{myObject.quantity}})</p>\n      <p> The cost is {{myObject.price | currency:'USD':true}}</p>\n    </li>\n    <h3>The total quantity of all of the objects is {{totalObjectQuantity()}}.</h3>\n  </ul>"
+            template: "<ul>\n      <li *ngFor=\"let myObject of myObjects\">\n        <h2 class=\"name\">{{myObject.name}}</h2>\n        <p>{{myObject.description}}</p>\n        <p class=\"quantity\" *ngIf=\"myObject.quantity >= 10\">There are a bunch of these. ({{myObject.quantity}})</p>\n        <p class=\"quantity\" *ngIf=\"myObject.quantity < 10\">There aren't a bunch of these. ({{myObject.quantity}})</p>\n        <p> The cost is {{myObject.price | currency:'USD':true}}</p>\n      </li>\n      <h3>The total quantity of all of the objects is {{totalObjectQuantity()}}.</h3>\n    </ul>",
+            styles: ["\n    .name {\n      text-decoration: underline;\n    }\n    .quantity {\n      font-size: small;\n    }"
+            ]
         }), 
         __metadata('design:paramtypes', [])
     ], MyObjectComponent);
