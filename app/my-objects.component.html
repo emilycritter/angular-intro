@@ -1,5 +1,5 @@
 <ul>
-    <li *ngFor="let myObject of myObjects">
+    <li *ngFor="let myObject of myObjects" [class.featured]="myObject.featured">
       <h2 class="name">{{myObject.name}}</h2>
       <p>{{myObject.description}}</p>
       <p class="quantity" *ngIf="myObject.quantity >= 10">There are a bunch of these. ({{myObject.quantity}})</p>

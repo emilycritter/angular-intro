@@ -5,4 +5,5 @@ export class MyObject {
   quantity: number;
   price: number;
   image: string;
+  featured: boolean;
 }
