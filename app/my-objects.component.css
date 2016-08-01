@@ -4,10 +4,22 @@
 .quantity {
   font-size: small;
 }
+li {
+  background: #57595D;
+  margin: 20px;
+  padding: 20px;
+}
+h2, p, .photo {
+  width: 100%;
+  margin: 20px;
+}
+img {
+  width: 25%;
+}
 .featured {
   background: #57595D;
   -webkit-border-image: -webkit-linear-gradient(right, #818fd8 0%, #cbb4e2 50%, #a6f2f5 100%);
     -o-border-image: linear-gradient(to left, #818fd8 0%, #cbb4e2 50%, #a6f2f5 100%);
-    border-image: linear-gradient(to left, #818fd8 0%, #cbb4e2 50%, #a6f2f5 100%);    
+    border-image: linear-gradient(to left, #818fd8 0%, #cbb4e2 50%, #a6f2f5 100%);
   border-image-slice: 1;
 }
