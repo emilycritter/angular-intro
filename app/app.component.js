@@ -9,31 +9,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var app_my_object_1 = require('./app.my-object');
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'Angular 2 Intro';
-        this.myObjects = [{
-                "id": 1,
-                "name": 'My first object',
-                "description": "This is the first object that I will send in.",
-                "quantity": 1,
-                "price": 5.75
-            },
-            {
-                "id": 2,
-                "name": 'My second object',
-                "description": "Here's a second object.",
-                "quantity": 20,
-                "price": 1000.00
-            }];
     }
-    AppComponent.prototype.totalObjectQuantity = function () {
-        return this.myObjects.reduce(function (prev, current) { return prev + current.quantity; }, 0);
-    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<h1>{{title}}</h1>\n  <ul>\n    <li *ngFor=\"let myObject of myObjects\">\n      <h2>{{myObject.name}}</h2>\n      <p>{{myObject.description}}</p>\n      <p *ngIf=\"myObject.quantity >= 10\">There are a bunch of these. ({{myObject.quantity}})</p>\n      <p *ngIf=\"myObject.quantity < 10\">There aren't a bunch of these. ({{myObject.quantity}})</p>\n      <p> The cost is {{myObject.price | currency:'USD':true}}</p>\n    </li>\n    <h3>The total quantity of all of the objects is {{totalObjectQuantity()}}.</h3>\n  </ul>"
+            template: "<h1>{{title}}</h1>\n  <my-object></my-object>",
+            directives: [app_my_object_1.MyObjectComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
