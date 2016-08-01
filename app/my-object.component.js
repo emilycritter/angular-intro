@@ -9,23 +9,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var mocks_1 = require('./mocks');
 var MyObjectComponent = (function () {
     function MyObjectComponent() {
-        this.myObjects = [{
-                "id": 1,
-                "name": 'My first object',
-                "description": "This is the first object that I will send in.",
-                "quantity": 1,
-                "price": 5.75
-            },
-            {
-                "id": 2,
-                "name": 'My second object',
-                "description": "Here's a second object.",
-                "quantity": 20,
-                "price": 1000.00
-            }];
     }
+    MyObjectComponent.prototype.ngOnInit = function () {
+        this.myObjects = mocks_1.MYOBJECT;
+    };
     MyObjectComponent.prototype.totalObjectQuantity = function () {
         return this.myObjects.reduce(function (prev, current) { return prev + current.quantity; }, 0);
     };
