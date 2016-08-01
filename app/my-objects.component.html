@@ -6,7 +6,7 @@
       <p class="quantity" *ngIf="myObject.quantity < 10">There aren't a bunch of these. ({{myObject.quantity}})</p>
       <p> The cost is {{myObject.price | currency:'USD':true}}</p>
       <div class="photo">
-        <img src="{{myObject.image}}" alt="Image" />
+        <img [src]="myObject.image" alt="Image" />
       </div>
     </li>
     <h3>The total quantity of all of the objects is {{totalObjectQuantity()}}.</h3>
